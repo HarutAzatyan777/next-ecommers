@@ -1,26 +1,15 @@
-import { useSession, signIn, signOut } from "next-auth/react"
-import Nav from "../../components/nav"
-
+import Layout from '../../components/layout';
+import { useSession } from 'next-auth/react'; // Correct import
 
 export default function Home() {
-  const { data: session } = useSession();
-  if(!session) {
+  const { data: session } = useSession(); // Corrected typo in "data"
+
   return (
-<div className='bg-blue-900 w-screen h-screen flex items-center'>
-<div className="text-center w-full">
-<button onClick={()=> signIn('google')} className="bg-white p-2 px-4 rounded-lg">Login wih Google</button>
-
-</div>
-</div>
+    <Layout>
+      <div className='text-blue-900'>
+        Hello, {session?.user?.name} {/* Assuming name is the property you want to access */}
+        <img src={session?.user?.image} alt='' />
+      </div>
+    </Layout>
   );
-}
-
-return(
-  <div className="bg-blue-900 min-h-screen flex">
-    <Nav />
-    <div className="bg-white flex-grow mt-2 mr-2 mb-2 rounded-lg p-4">
-    logged in {session.user?.email}
-    </div>
-  </div>
-);
 }
