@@ -1,36 +1,51 @@
+/* Import Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
-
+/* Custom Styles */
 
 body {
   margin: 0;
   font-family: 'Your Preferred Font', sans-serif;
 }
 
-
-
-
-input,textarea{
+input, textarea {
   @apply border-2 border-gray-300 rounded-md px-1 w-full;
   @apply mb-2;
-
 }
-input:focus textarea:focus{
+
+input:focus, textarea:focus {
   @apply border-blue-900;
 }
 
-h1{
+h1 {
   @apply text-blue-900 mb-2 text-xl;
 }
 
-label{
+label {
   @apply text-blue-900;
 }
 
-.btn-primary{
-  @apply bg-blue-900 text-white px-4 py-1 rounded-md
+.btn-primary {
+  @apply bg-blue-900 text-white px-4 py-1 rounded-md;
+}
+
+/* Table Styling */
+.table {
+  @apply w-full border-collapse border border-gray-400;
+}
+
+.table th,
+.table td {
+  @apply py-2 px-4 border border-gray-400 p-1;
+}
+
+/* Button Styles */
+.btn-edit {
+  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+}
+
+.btn-delete {
+  @apply bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-7;
 }
